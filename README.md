@@ -30,26 +30,57 @@ By leveraging cutting-edge **Visual Positioning System (VPS)** technology, the a
 
 ---
 
-## 🚀 Setup & Installation
-To run or build this project, you will need:
-Unity 2021.3.16f1 LTS or newer with the Android Build Support module.
-Google Cloud Platform (GCP) API Key:
-Enable ARCore API in your GCP Console.
-Generate an API Key.
-In Unity, go to Edit -> Project Settings -> XR Plug-in Management -> ARCore Extensions and paste your key into the Android API Key field.
-Android Build Settings:
-Platform: Android (IL2CPP, ARM64 target architecture).
-Minimum API Level: Android 8.0 (API 26) or higher.
-Graphics API: Remove Vulkan (use OpenGLES3 only to prevent camera rendering issues).
-📍 Coordinates for Testing (Baiterek, Astana)
-If you are testing the Geospatial Scene on-site at the Baiterek monument, use these tested coordinates:
-Latitude: 51.128302
-Longitude: 71.430531
-Altitude: 0 (with Force Put On Terrain checked)
-Heading: 0 (North)
-Note: For testing at home, please use the 2-TapToPlace scene with the Bai-Fin prefab to place the model on any flat surface (AR Plane).
-👥 Team & Acknowledgements
-Developed as an MVP for the Astana Innovations Accelerator 2026 by student developers at Nazarbayev Intellectual Schools (NIS), Astana, Kazakhstan. Special thanks to the open-source community and the Takashi Yoshinaga Geospatial Starter Kit.
+## 🚀 Setup & Configuration
+
+### Prerequisites
+Before building the project, ensure you have the following requirements met:
+*   **Unity Editor:** Version `2021.3.16f1 LTS` (or newer) with **Android Build Support** installed.
+*   **Google Cloud API Key:** An active API Key with the **ARCore API** enabled in the Google Cloud Console.
+
+### 1. Unity Project Settings
+1. Go to `Edit` -> `Project Settings` -> `XR Plug-in Management` -> `ARCore Extensions`.
+2. Paste your Google Cloud API key into the **Android API Key** field.
+3. Ensure **Geospatial** is set to **Enabled**.
+4. In `Project Settings` -> `Player` -> `Other Settings`:
+   *   **Graphics APIs:** Remove **Vulkan** from the list (keep only **OpenGLES3**).
+   *   **Minimum API Level:** Set to **Android 8.0 (API Level 26)** or higher.
+   *   **Scripting Backend:** Set to **IL2CPP**.
+   *   **Target Architectures:** Check **ARM64** (uncheck ARMv7).
+
+---
+
+## 🎭 Scene & Animation Setup
+
+### 1. UI & Language Settings
+The application supports multilingual localization (**Kazakh, Russian, and English**).
+*   The transition sequence begins in the `SettingsScene` where the user selects their preferred language.
+*   The choice is saved locally via `PlayerPrefs` and automatically configures the text overlays and triggers in the main AR scene.
+
+### 2. The AR Experience (Baiterek Scene)
+*   **The Legend Director:** A unified `LegendDirector` script handles the visual storytelling. It coordinates the text blocks, background music, and 3D animations dynamically over a timeline.
+*   **Vines (Lianas):** The custom-generated vine model grows dynamically using a vertical scale transition (Y-axis scaling from 0 to 1) and rotation, simulating organic growth.
+*   **Golden Egg (Sun):** Formed using a high-fidelity Unity Sphere with HDR Emissive materials and an internal Point Light, pulsing in sync with the third chapter of the legend.
+*   **The Samruk Bird:** Animated using a smooth hovering loop in the air above the golden egg, creating a lifelike spiritual presence.
+
+---
+
+## 📍 Coordinates for Testing (Baiterek, Astana)
+
+If you are testing the **Geospatial Scene** on-site at the Baiterek monument, configure your spawner with the following parameters:
+
+*   **Latitude:** `51.128302`
+*   **Longitude:** `71.430531`
+*   **Altitude:** `0` (Ensure `Force Put On Terrain` is checked to snap the anchor to the ground)
+*   **Heading:** `0` (North)
+
+> 💡 **Tip for Offline/Indoor Testing:** If you are not near the monument, please use the `2-TapToPlace` scene. This allows you to tap on any detected flat surface (AR Plane) to spawn a 1:10 scaled version of the Baiterek scene with all animations and audio fully functional.
+
+---
+
+## 👥 Team & Acknowledgements
+
+*   **Developers:** Student team at **Nazarbayev Intellectual Schools (NIS)**, Astana, Kazakhstan. Created as an MVP submission for the **Astana Innovations Accelerator 2026**.
+*   **External Assets:** 3D models generated via **Meshy AI**, character rigging via **Adobe Mixamo**, and templates adapted from the **Takashi Yoshinaga Geospatial Starter Kit**.
 
 --- 
 
