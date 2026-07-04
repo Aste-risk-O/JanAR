@@ -39,7 +39,8 @@ Assets/
 │   ├── Scenes/                # MenuScene, SettingsScene, ARScene
 │   └── Scripts/               # LegendDirector.cs, AutoSpawnController.cs, Billboard.cs, etc.
 └── Samples/                   # ARCore Extensions samples (TapToPlace base)
-🚀 Setup & Installation
+
+## 🚀 Setup & Installation
 To run or build this project, you will need:
 Unity 2021.3.16f1 LTS or newer with the Android Build Support module.
 Google Cloud Platform (GCP) API Key:
