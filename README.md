@@ -30,16 +30,6 @@ By leveraging cutting-edge **Visual Positioning System (VPS)** technology, the a
 
 ---
 
-## 📁 Repository Structure
-
-```text
-Assets/
-├── AR_Baiterek/               # Custom project assets
-│   ├── Content/               # 3D Models, Materials, Prefabs (Bai-Fin)
-│   ├── Scenes/                # MenuScene, SettingsScene, ARScene
-│   └── Scripts/               # LegendDirector.cs, AutoSpawnController.cs, Billboard.cs, etc.
-└── Samples/                   # ARCore Extensions samples (TapToPlace base)
-
 ## 🚀 Setup & Installation
 To run or build this project, you will need:
 Unity 2021.3.16f1 LTS or newer with the Android Build Support module.
@@ -60,3 +50,17 @@ Heading: 0 (North)
 Note: For testing at home, please use the 2-TapToPlace scene with the Bai-Fin prefab to place the model on any flat surface (AR Plane).
 👥 Team & Acknowledgements
 Developed as an MVP for the Astana Innovations Accelerator 2026 by student developers at Nazarbayev Intellectual Schools (NIS), Astana, Kazakhstan. Special thanks to the open-source community and the Takashi Yoshinaga Geospatial Starter Kit.
+
+--- 
+
+## 📁 Repository Structure
+
+```text
+Assets/
+├── AR_Baiterek/               # Custom project assets
+│   ├── Content/               # 3D Models, Materials, Prefabs (Bai-Fin)
+│   ├── Scenes/                # MenuScene, SettingsScene, ARScene
+│   └── Scripts/               # LegendDirector.cs, AutoSpawnController.cs, Billboard.cs, etc.
+└── Samples/                   # ARCore Extensions samples (TapToPlace base)
+
+
